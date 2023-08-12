@@ -23,6 +23,8 @@ public class ShoppingCart {
         }
     }
 
+    // Пример применения принципа SOLID: принцип открытости/закрытости, использование интерфейса
+    // для реализации разных стратегий расчета стоимости заказа
     public double calculateTotalPrice(PricingStrategy pricingStrategy){
         return pricingStrategy.calculateTotalPrice(products);
 

@@ -1,5 +1,7 @@
 import java.util.List;
 
+
+// Реализация расчета стоимости заказа с простой скидкой
 public class SimpleDiscountPricingStrategy implements PricingStrategy{
     private double discountRate;
 
