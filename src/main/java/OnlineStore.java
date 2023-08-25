@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OnlineStore {
-    public  static final double DISCOUNT_RATE = 0.2;
+    public static final double DISCOUNT_RATE = 0.2;
+
     public static void main(String[] args) {
         List<Product> products = new ArrayList<>();
 
@@ -20,9 +21,14 @@ public class OnlineStore {
 
         ShoppingCart shoppingCart = new ShoppingCart();
 
+        // Добавляем товары в корзину
         shoppingCart.addProduct(products.get(0));
         shoppingCart.addProduct(products.get(2));
 
+        shoppingCart.showCart();
+
+        // Пример применения принципа SOLID: принцип подстановки Барбары Лисков,
+        // использование интерфейса для работы с разными  расчета стоимости заказа
         PricingStrategy pricingStrategy = new SimpleDiscountPricingStrategy(DISCOUNT_RATE);
         double totalPrise = shoppingCart.calculateTotalPrice(pricingStrategy);
 

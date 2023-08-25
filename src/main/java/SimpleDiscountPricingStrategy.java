@@ -1,17 +1,17 @@
 import java.util.List;
 
-
 // Реализация расчета стоимости заказа с простой скидкой
-public class SimpleDiscountPricingStrategy implements PricingStrategy{
+public class SimpleDiscountPricingStrategy implements PricingStrategy {
     private double discountRate;
 
-    public SimpleDiscountPricingStrategy(double discountRate){
+    public SimpleDiscountPricingStrategy(double discountRate) {
         this.discountRate = discountRate;
     }
+
     @Override
     public double calculateTotalPrice(List<Product> products) {
         double totalPrise = 0;
-        for(Product product : products){
+        for (Product product : products) {
             totalPrise += product.getPrise();
         }
         double discount = totalPrise * discountRate;
